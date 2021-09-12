@@ -24,7 +24,7 @@ function [result, alpha, beta, y] = TPS(xi_1, xi_2, yi, lambda)
 
  %% Get distances
     squaredDist = sqrtDist(x_a, x_b);
-    K = log(squaredDist + eps).*squaredDist/2
+    K = log(squaredDist + eps).*squaredDist/2;
    
     A = [K+lambda.*I transpose(P); P zeros(size(P, 1))];
     y = [yi; zeros(3,1)];
